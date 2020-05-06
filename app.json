@@ -1,0 +1,17 @@
+{
+  "name": "PajakMobile",
+  "displayName": "PajakMobile",
+  "expo": {
+    "name": "PajakMobile",
+    "slug": "PajakMobile",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
