@@ -1,6 +1,7 @@
 import React from "react";
-import {Text, View, FlatList, StyleSheet} from "react-native";
+import {Text, View, FlatList, StyleSheet, Image} from "react-native";
 import {Invoice} from "../model/Model";
+import Header from "../common/Header";
 
 const taxPayerName = "My Awesome Company"
 
@@ -45,7 +46,8 @@ const InvoiceView: React.FC<InvoiceViewProps> = (props) => {
 
     return (
 
-        <View style={{flex: 1, flexDirection: "row", marginBottom: 10, alignItems: 'center', justifyContent: 'center',}}>
+        <View
+            style={{flex: 1, flexDirection: "row", marginBottom: 10, alignItems: 'center', justifyContent: 'center',}}>
             <Text style={fieldStyle}>Invoice Number: {invoice.invoiceNumber ?? ''}</Text>
             <Text style={fieldStyle}>Buyer/Seller: {invoice.counterPart?.name ?? ''}</Text>
             <Text style={fieldStyle}>Amount: IDR. {(invoice.unitAmount ?? 0) * (invoice.unitNumber ?? 0)}</Text>
@@ -56,15 +58,15 @@ const InvoiceView: React.FC<InvoiceViewProps> = (props) => {
 
 function InvoicesListView() {
     return (
-        <View>
-            <View style={styles.header}>
-                <Text style={{color: 'white', fontWeight: "bold", textAlign: 'center'}}>OnlinePajak</Text>
-            </View>
-            <View style={{flex: 1, marginTop: 22}}>
-                <FlatList
-                    data={invoices}
-                    renderItem={({item}) => <InvoiceView invoice={item}/>}
-                />
+        <View style={{flex: 1, flexDirection: "column"}}>
+            <Header />
+            <View>
+                <View style={{flex: 1, marginTop: 22}}>
+                    <FlatList
+                        data={invoices}
+                        renderItem={({item}) => <InvoiceView invoice={item}/>}
+                    />
+                </View>
             </View>
         </View>
     )

@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../common/Header";
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import {Invoice} from "../model/Model";
 
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     },
 
     formLabel: {
-        margin:'5px',
+        margin: '5px',
         fontSize: 20,
         color: 'grey',
     },
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
         height: 40,
         paddingHorizontal: 10,
         backgroundColor: '#f5f5f5',
-        borderBottomWidth : 1.0
+        borderBottomWidth: 1.0
     },
     formText: {
         alignItems: 'center',
@@ -40,12 +41,10 @@ const styles = StyleSheet.create({
     },
 });
 
-const CreateForm: React.FC<Invoice> = (invoice) => {
+const CreateForm = () => {
     return (
-        <View>
-            <View style={styles.header}>
-                <Text style={{color: 'white', fontWeight: "bold", textAlign: 'center'}}>OnlinePajak</Text>
-            </View>
+        <View style={{flex: 1, flexDirection: "column"}}>
+            <Header/>
             <View style={styles.container}>
                 <Text style={styles.formLabel}>Create your invoice</Text>
                 <TextInput placeholder="Goods" style={styles.inputStyle}/>
