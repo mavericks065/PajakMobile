@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 const Header = () => {
     return (
         <View style={styles.header}>
-            <Image style={{width: '92px', height: '25px'}}
+            <Image style={{width: 92, height: 25}}
                    source={{uri: 'https://globalsettings-api.staging-achilles.systems/labels/banners/online-pajak.svg'}}/>
         </View>
     );
