@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Header from "../common/Header";
 import {Picker, StyleSheet, Text, TextInput, View} from "react-native";
-import {Invoice} from "../model/Model";
 import DatePicker from 'react-native-datepicker';
 
 const styles = StyleSheet.create({
@@ -135,7 +134,7 @@ const CreateForm = () => {
 
                 <Picker
                     selectedValue={isBuyer}
-                    onValueChange={isBuyer => setIsBuyer(isBuyer)}
+                    onValueChange={(value) => setIsBuyer(value)}
                     style={{width: '50%'}}>
                     <Picker.Item label="Yes" value='true'/>
                     <Picker.Item label="No" value='false'/>
