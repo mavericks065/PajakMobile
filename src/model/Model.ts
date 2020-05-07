@@ -2,12 +2,9 @@ import React from "react";
 import {Text, View} from "react-native";
 
 export interface Invoice {
-    vendor?: string; // to be removed and replaced by CounterPart
-    amount?: number; // to be removed and replaced by unitAmount
     taxPeriod?: string;
-    date?: string; // to be removed and replaced by invoiceDate and creationDate
     counterPart?: CounterPart;
-    creationDate?: Date;
+    creationDate: Date;
     invoiceDate?: Date;
     dueDate?: Date;
     unitNumber?: number;
