@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, View} from "react-native";
+import {Text, View, FlatList, StyleSheet} from "react-native";
 import {Invoice} from "../model/Model";
 
 export interface InvoiceViewProps {
@@ -26,17 +26,17 @@ type Invoices = Invoice[]
 const InvoiceView: React.FC<InvoiceViewProps> = (props) => {
     const {invoice} = props
     return (
-        <View>
-            <View style={{width: 50, height: 50}}>
+        <View style={{flex: 1, flexDirection: "column", marginBottom: 10, alignItems: 'center'}}>
+            <View>
                 <Text>Vendor: {invoice.vendor}</Text>
             </View>
-            <View style={{width: 50, height: 50}}>
+            <View>
                 <Text>Amount: IDR. {invoice.amount}</Text>
             </View>
-            <View style={{width: 50, height: 50}}>
-                <Text>Vendor: {invoice.date}}</Text>
+            <View>
+                <Text>Vendor: {invoice.date}</Text>
             </View>
-            <View style={{width: 50, height: 50}}>
+            <View>
                 <Text>Tax Period: {invoice.taxPeriod}</Text>
             </View>
         </View>
@@ -45,9 +45,11 @@ const InvoiceView: React.FC<InvoiceViewProps> = (props) => {
 
 function InvoicesListView() {
     return (
-        // <View style={{flex: 1, flexDirection: "column"}}>>
-        <View>
-            {invoices.map(invoice => <InvoiceView invoice={invoice}/>)}
+        <View style={{flex: 1, marginTop: 22}}>
+            <FlatList
+                data={invoices}
+                renderItem={({item}) => <InvoiceView invoice={item}/>}
+            />
         </View>
     )
 }
