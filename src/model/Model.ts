@@ -15,6 +15,8 @@ export interface Invoice {
     discount?: number;
     goods?: string;
     notes?: string;
+    invoiceNumber?: string;
+    taxPayerName: string;
     // to add file after for the picture
 }
 
