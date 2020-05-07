@@ -65,6 +65,7 @@ function InvoicesListView() {
                     <FlatList
                         data={invoices}
                         renderItem={({item}) => <InvoiceView invoice={item}/>}
+                        keyExtractor={(item, index) => index.toString()}
                     />
                 </View>
             </View>
