@@ -27,18 +27,10 @@ const InvoiceView: React.FC<InvoiceViewProps> = (props) => {
     const {invoice} = props
     return (
         <View style={{flex: 1, flexDirection: "column", marginBottom: 10, alignItems: 'center'}}>
-            <View>
-                <Text>Vendor: {invoice.vendor}</Text>
-            </View>
-            <View>
-                <Text>Amount: IDR. {invoice.amount}</Text>
-            </View>
-            <View>
-                <Text>Vendor: {invoice.date}</Text>
-            </View>
-            <View>
-                <Text>Tax Period: {invoice.taxPeriod}</Text>
-            </View>
+            <Text>Vendor: {invoice.vendor}</Text>
+            <Text>Amount: IDR. {invoice.amount}</Text>
+            <Text>Vendor: {invoice.date}</Text>
+            <Text>Tax Period: {invoice.taxPeriod}</Text>
         </View>
     );
 }
