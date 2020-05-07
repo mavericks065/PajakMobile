@@ -1,12 +1,7 @@
 import React from "react";
 import {Text, View} from "react-native";
+import {Invoice} from "../model/Model";
 
-export interface Invoice {
-    vendor: string;
-    amount: number;
-    taxPeriod: string;
-    date: string;
-}
 const invoices: Array<Invoice> = [{
     vendor: "Vendor",
     amount: 5000.00,
