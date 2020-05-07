@@ -2,30 +2,54 @@ import React from "react";
 import {Text, View} from "react-native";
 import {Invoice} from "../model/Model";
 
-const invoices: Array<Invoice> = [{
-    vendor: "Vendor",
-    amount: 5000.00,
-    date: "2020-05-05",
-    taxPeriod: "2020-05"
-}]
+export interface InvoiceViewProps {
+    invoice: Invoice,
+}
 
-const InvoiceView :React.FC<Invoice> = (invoice) => {
+const invoices: Invoices = [
+    {
+        vendor: "Vendor",
+        amount: 5000.00,
+        date: "2020-05-05",
+        taxPeriod: "2020-05"
+    },
+    {
+        vendor: "Vendor2",
+        amount: 5000.00,
+        date: "2020-05-05",
+        taxPeriod: "2020-05"
+    },
+]
+
+type Invoices = Invoice[]
+
+const InvoiceView: React.FC<InvoiceViewProps> = (props) => {
+    const {invoice} = props
     return (
-        <View style={{flex: 1, flexDirection: 'column'}}>
+        <View>
             <View style={{width: 50, height: 50}}>
-                <Text>Vendor: ${invoice.vendor}</Text>
+                <Text>Vendor: {invoice.vendor}</Text>
             </View>
             <View style={{width: 50, height: 50}}>
-                <Text>Amount: IDR. ${invoice.amount}</Text>
+                <Text>Amount: IDR. {invoice.amount}</Text>
             </View>
             <View style={{width: 50, height: 50}}>
-                <Text>Vendor: ${invoice.date}</Text>
+                <Text>Vendor: {invoice.date}}</Text>
             </View>
             <View style={{width: 50, height: 50}}>
-                <Text>Tax Period: ${invoice.vendor}</Text>
+                <Text>Tax Period: {invoice.taxPeriod}</Text>
             </View>
         </View>
     );
 }
 
-export default InvoiceView;
+function InvoicesListView() {
+    return (
+        // <View style={{flex: 1, flexDirection: "column"}}>>
+        <View>
+            {invoices.map(invoice => <InvoiceView invoice={invoice}/>)}
+        </View>
+    )
+}
+
+export default InvoicesListView;

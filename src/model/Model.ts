@@ -7,7 +7,7 @@ export interface Invoice {
     taxPeriod?: string;
     date?: string; // to be removed and replaced by invoiceDate and creationDate
     counterPart?: CounterPart;
-    creationDate: Date;
+    creationDate?: Date;
     invoiceDate?: Date;
     dueDate?: Date;
     unitNumber?: number;

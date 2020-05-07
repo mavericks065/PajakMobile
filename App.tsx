@@ -3,7 +3,7 @@ import {Ionicons} from '@expo/vector-icons';
 import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-//import InvoiceView from './src/invoices/InvoiceView'
+import InvoicesListView from './src/invoices/InvoiceView'
 
 function HomeScreen() {
     return (
@@ -48,7 +48,7 @@ export default function App() {
                     },
                 })}>
                 <Tab.Screen name="New Invoice" component={HomeScreen}/>
-                <Tab.Screen name="Draft List" component={SettingsScreen}/>
+                <Tab.Screen name="Draft List" component={InvoicesListView}/>
             </Tab.Navigator>
         </NavigationContainer>
     );
