@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, View, FlatList, StyleSheet} from "react-native";
+import {Text, View, FlatList } from "react-native";
 import {Invoice} from "../model/Model";
 
 export interface InvoiceViewProps {
@@ -29,7 +29,7 @@ const InvoiceView: React.FC<InvoiceViewProps> = (props) => {
         <View style={{flex: 1, flexDirection: "column", marginBottom: 10, alignItems: 'center'}}>
             <Text>Vendor: {invoice.vendor}</Text>
             <Text>Amount: IDR. {invoice.amount}</Text>
-            <Text>Vendor: {invoice.date}</Text>
+            <Text>Date: {invoice.date}</Text>
             <Text>Tax Period: {invoice.taxPeriod}</Text>
         </View>
     );
